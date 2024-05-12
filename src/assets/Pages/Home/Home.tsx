@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 // Style 
 import './Home.css';
+import Dropdown from '../../components/DropDown/Dropdown';
 
 export default function Home() {
   const [lotteries, setLotteries] = useState([]);
@@ -21,12 +22,9 @@ export default function Home() {
       getLotteries(lotteries);
     }, []);
 
-    const handleConsoleLotteries = () =>{
-      console.log(lotteries);
-    }
   return (
     <div>
-      <button onClick={handleConsoleLotteries}>Test</button>
+        <Dropdown></Dropdown>
     </div>
   )
 }
