@@ -1,0 +1,25 @@
+.leftContainer{
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: var(--megaSena);
+    flex-direction: column;
+}
+.lotterieName{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    gap: 20px;
+    font-weight: bold;
+}
+.lotterieInformations{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.lotterieInformations.info{
+    font-weight: bold;
+}
