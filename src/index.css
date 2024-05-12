@@ -1,3 +1,12 @@
+:root{
+  --megaSena: #6BEFA3;
+  --quina: #8666EF;
+  --lotoFacil: #DD7AC6;
+  --lotoMania: #FFAB64;
+  --timeMania: #5AAD7D;
+  --diaDeSorte: #BFAF83;
+}
+
 *{
   margin: 0;
   padding: 0;
