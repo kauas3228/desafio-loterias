@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 // Style 
 import './Home.css';
-import Dropdown from '../../components/DropDown/Dropdown';
 
 export default function Home() {
+  
   // Data
   const [lotteries, setLotteries] = useState([]);
   const [seletValue, setSelectValue] = useState('megasena');
 
   // API URL
+
   const apiURL = `https://loteriascaixa-api.herokuapp.com/api/${seletValue}/latest`;
 
   // Getting data for api
@@ -29,9 +30,9 @@ export default function Home() {
 
   }, []);
 
-  // Dropdown
+  // Dropdown itens list
 
-  const itens = [
+  const list = [
     { id: 1, name: 'megasena' },
     { id: 2, name: 'quina' },
     { id: 3, name: 'lotofacil' },
@@ -39,8 +40,11 @@ export default function Home() {
     { id: 5, name: 'timemania' },
     { id: 6, name: 'diadesorte' }
   ];
+
+  // Dropdownd function
+
   const handleDropdown = () => {
-    const loterrie = apiURL;
+    const loterrie = `https://loteriascaixa-api.herokuapp.com/api/${seletValue}/latest`;
 
     getLotteries(loterrie);
     console.log(lotteries);
@@ -49,15 +53,15 @@ export default function Home() {
 
   return (
     <div className='container'>
+
       <div className='leftContainer'>
 
-        <select value={seletValue} onChange={e => {
+        <select defaultValue={seletValue} onChange={e => {
           setSelectValue(e.target.value)
           handleDropdown();
-        }
-        }>
+        }}>
           {
-            itens.map((item) => (
+            list.map((item) => (
               <option value={item.name} key={item.id}>{item.name}</option>
             ))
           }
@@ -78,6 +82,7 @@ export default function Home() {
       <div className='rigthContainer'>
 
       </div>
+
     </div>
   )
 }

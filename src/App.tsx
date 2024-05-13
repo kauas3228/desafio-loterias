@@ -1,4 +1,4 @@
-import Home from "./assets/Pages/Home/Home"
+import Home from "./assets/Pages/Home/Home.tsx"
 
 function App() {
 
