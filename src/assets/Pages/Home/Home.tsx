@@ -9,7 +9,7 @@ export default function Home() {
   // Data
   const [lotteries, setLotteries] = useState<any>([]);
   const defaultValue = 'megasena';
-
+  const [color, setColor] = useState<String>(defaultValue);
 
   // Getting data for api
 
@@ -44,13 +44,16 @@ export default function Home() {
     const selectedValue = e.target.value;
     const lotterie = `https://loteriascaixa-api.herokuapp.com/api/${selectedValue}/latest`;
 
+
+    setColor(selectedValue);
+
     getLotteries(lotterie);
   }
 
   return (
     <div className='container'>
 
-      <div className='leftContainer'>
+      <div className='leftContainer' style={{'backgroundColor': `var(--${color})`}}>
 
         <select defaultValue={defaultValue} onChange={handleDropdown}>
           {
