@@ -42,12 +42,10 @@ export default function Home() {
 
   const handleDropdown = (e: any) => {
     const selectedValue = e.target.value;
-    const lotterie = `https://loteriascaixa-api.herokuapp.com/api/${selectedValue}/latest`;
-
+    const lotterieNewUrl = `https://loteriascaixa-api.herokuapp.com/api/${selectedValue}/latest`;
 
     setColor(selectedValue);
-
-    getLotteries(lotterie);
+    getLotteries(lotterieNewUrl);
   }
 
   return (
