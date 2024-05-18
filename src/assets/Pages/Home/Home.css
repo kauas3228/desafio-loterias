@@ -11,6 +11,7 @@
 }
 .rigthContainer{
     background-color: var(--gray);
+    width: 100%;
 }
 .lotterieName{
     display: flex;

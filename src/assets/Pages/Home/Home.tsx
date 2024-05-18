@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <div className='container'>
 
-      <div className='leftContainer' style={{'backgroundColor': `var(--${color})`}}>
+      <div className='leftContainer' style={{ 'backgroundColor': `var(--${color})` }}>
 
         <select defaultValue={defaultValue} onChange={handleDropdown}>
           {
@@ -74,6 +74,12 @@ export default function Home() {
       </div>
 
       <div className='rigthContainer'>
+
+        {// Map the number in draw order 
+        }
+        {lotteries.dezenasOrdemSorteio?.map((item: any) => (
+          <p key={item}>{item}</p>
+        ))}
 
       </div>
 
