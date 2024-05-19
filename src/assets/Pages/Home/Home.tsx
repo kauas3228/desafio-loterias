@@ -77,10 +77,15 @@ export default function Home() {
 
         {// Map the number in draw order 
         }
-        {lotteries.dezenasOrdemSorteio?.map((item: any) => (
-          <p key={item}>{item}</p>
-        ))}
+        <div className='ballsContainer'>
+          {
+            lotteries.dezenasOrdemSorteio?.map((item: any) => (
+              <div key={item} className='balls'><p>{item}</p></div>
+            ))
+          }
+        </div>
 
+        
       </div>
 
     </div>

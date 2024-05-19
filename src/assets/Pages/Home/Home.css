@@ -1,17 +1,14 @@
 .container{
     display: flex;
+    flex-wrap: wrap;
 }
 .leftContainer{
-    width: 600px;
+    width: 40%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-}
-.rigthContainer{
-    background-color: var(--gray);
-    width: 100%;
 }
 .lotterieName{
     display: flex;
@@ -45,4 +42,40 @@ select{
     font-weight: 500;
     outline: none;
     border: none;
+}
+.rigthContainer{
+    width: 60%;
+    background-color: var(--gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ballsContainer{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.balls{
+    background-color: #fff;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    font-weight: bold;
+}
+
+@media(max-width: 850px){
+    .leftContainer{
+        width: 100%;
+    }
+    .rigthContainer{
+        width: 100%;
+    }
+    .container{
+        flex-direction: column;
+    }
 }
