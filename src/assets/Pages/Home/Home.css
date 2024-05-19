@@ -1,16 +1,18 @@
-.container{
+.container {
     display: flex;
     flex-wrap: wrap;
 }
-.leftContainer{
-    width: 40%;
+
+.leftContainer {
+    width: 30%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
 }
-.lotterieName{
+
+.lotterieName {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,21 +21,25 @@
     font-weight: bold;
     text-transform: uppercase;
 }
-.lotterieInformations{
+
+.lotterieInformations {
     color: #fff;
     display: flex;
     flex-direction: column;
     gap: 10px;
     text-align: left;
 }
-.lotterieInformations p{
+
+.lotterieInformations p {
     font-size: 20px;
 }
-.lotterieInformations .info{
+
+.lotterieInformations .info {
     font-weight: bold;
     font-size: 20px;
 }
-select{
+
+select {
     width: 215px;
     text-align: center;
     text-transform: uppercase;
@@ -43,21 +49,27 @@ select{
     outline: none;
     border: none;
 }
-.rigthContainer{
-    width: 60%;
+
+.rigthContainer {
+    width: 70%;
     background-color: var(--gray);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    height: 100vh;
 }
-.ballsContainer{
+
+.ballsContainer {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
-.balls{
+
+.balls {
     background-color: #fff;
     width: 80px;
     height: 80px;
@@ -68,14 +80,16 @@ select{
     font-weight: bold;
 }
 
-@media(max-width: 850px){
-    .leftContainer{
+@media(max-width: 850px) {
+    .leftContainer {
         width: 100%;
     }
-    .rigthContainer{
+
+    .rigthContainer {
         width: 100%;
     }
-    .container{
+
+    .container {
         flex-direction: column;
     }
 }

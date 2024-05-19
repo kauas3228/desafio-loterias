@@ -49,7 +49,7 @@ export default function Home() {
   }
 
   return (
-    <div className='container'>
+    <div className='container' style={{'backgroundColor': `var(--${color})`}}>
 
       <div className='leftContainer' style={{ 'backgroundColor': `var(--${color})` }}>
 
@@ -74,7 +74,7 @@ export default function Home() {
       </div>
 
       <div className='rigthContainer'>
-
+          <p></p>
         {// Map the number in draw order 
         }
         <div className='ballsContainer'>
@@ -85,7 +85,7 @@ export default function Home() {
           }
         </div>
 
-        
+        <p>Este sorteio é meramente ilustrativo e não possui nenhuma ligagação com a CAIXA.</p>
       </div>
 
     </div>
