@@ -90,7 +90,7 @@ select {
     .rigthContainer {
         width: 100%;
         min-height: 50vh;
-        max-height: 100vh;
+        max-width: fit-content;
         gap: 30px;
     }
 
