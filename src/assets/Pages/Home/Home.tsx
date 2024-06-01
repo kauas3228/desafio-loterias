@@ -7,36 +7,36 @@ import './Home.css';
 export default function Home() {
 
   // Data
-  const [lotteries, setLotteries] = useState<any>([]);
-  const defaultValue = 'megasena';
+
+  const [allLoteries, setAllLotteries] = useState<any>([]);
+  const [lotterie, setLotterie] = useState<any>([]);
+  const defaultValue = 'maismilionaria';
   const [color, setColor] = useState<String>(defaultValue);
 
   // Getting data for api
 
-  const getLotteries = async (url: any) => {
+  const getAllLoterreis = async (url: any) => {
     const res = await fetch(url);
     const data = await res.json();
 
-    setLotteries(data);
+    setAllLotteries(data);
+  }
+
+  const getLotterie = async (url: any) => {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    setLotterie(data);
   }
 
   useEffect(() => {
-    const lotteries = `https://loteriascaixa-api.herokuapp.com/api/${defaultValue}/latest`;
+    const allLoteries = 'https://loteriascaixa-api.herokuapp.com/api';
+    const lotterie = `https://loteriascaixa-api.herokuapp.com/api/${defaultValue}/latest`;
 
-    getLotteries(lotteries);
-
+    getLotterie(lotterie);
+    getAllLoterreis(allLoteries)
   }, []);
 
-  // Dropdown itens list
-
-  const list = [
-    { id: 1, name: 'megasena' },
-    { id: 2, name: 'quina' },
-    { id: 3, name: 'lotofacil' },
-    { id: 4, name: 'lotomania' },
-    { id: 5, name: 'timemania' },
-    { id: 6, name: 'diadesorte' }
-  ];
 
   // Dropdownd function
 
@@ -45,30 +45,30 @@ export default function Home() {
     const lotterieNewUrl = `https://loteriascaixa-api.herokuapp.com/api/${selectedValue}/latest`;
 
     setColor(selectedValue);
-    getLotteries(lotterieNewUrl);
+    getLotterie(lotterieNewUrl);
   }
 
   return (
-    <div className='container' style={{'backgroundColor': `var(--${color})`}}>
+    <div className='container'>
 
       <div className='leftContainer' style={{ 'backgroundColor': `var(--${color})` }}>
 
         <select defaultValue={defaultValue} onChange={handleDropdown}>
           {
-            list.map((item) => (
-              <option value={item.name} key={item.id}>{item.name}</option>
+            allLoteries.map((item: any) => (
+              <option value={item} key={item}>{item}</option>
             ))
           }
         </select>
 
         <div className='lotterieName'>
           <img src='/Logo_Sena.svg'></img>
-          <h1>{lotteries.loteria}</h1>
+          <h1>{lotterie.loteria}</h1>
         </div>
 
         <div className='lotterieInformations'>
           <p>Concurso</p>
-          <p className='info'>{lotteries.concurso} - {lotteries.data}</p>
+          <p className='info'>{lotterie.concurso} - {lotterie.data}</p>
         </div>
 
       </div>
@@ -77,10 +77,10 @@ export default function Home() {
           <p></p>
         {// Map the number in draw order 
         }
-        <div className='ballsContainer'>
+        <div className='numbersContainer'>
           {
-            lotteries.dezenasOrdemSorteio?.map((item: any) => (
-              <div key={item} className='balls'><p>{item}</p></div>
+            lotterie.dezenasOrdemSorteio?.map((item: any) => (
+              <div key={item} className='numbers'><p>{item}</p></div>
             ))
           }
         </div>
