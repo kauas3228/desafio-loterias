@@ -8,19 +8,20 @@ export default function Home() {
 
   // Data
 
-  const [allLoteries, setAllLotteries] = useState<any>([]);
   const [lotterie, setLotterie] = useState<any>([]);
-  const defaultValue = 'maismilionaria';
+  const defaultValue = 'megasena';
   const [color, setColor] = useState<String>(defaultValue);
 
+
+  const itens = [
+    {id: 1, name: 'megasena'},
+    {id: 2, name: 'lotofacil'},
+    {id: 3, name: 'quina'},
+    {id: 4, name: 'lotomani'},
+    {id: 5, name: 'timemania'},
+    {id: 6, name: 'diadesorte'},
+  ]
   // Getting data for api
-
-  const getAllLoterreis = async (url: any) => {
-    const res = await fetch(url);
-    const data = await res.json();
-
-    setAllLotteries(data);
-  }
 
   const getLotterie = async (url: any) => {
     const res = await fetch(url);
@@ -30,11 +31,9 @@ export default function Home() {
   }
 
   useEffect(() => {
-    const allLoteries = 'https://loteriascaixa-api.herokuapp.com/api';
     const lotterie = `https://loteriascaixa-api.herokuapp.com/api/${defaultValue}/latest`;
 
     getLotterie(lotterie);
-    getAllLoterreis(allLoteries)
   }, []);
 
 
@@ -55,8 +54,8 @@ export default function Home() {
 
         <select defaultValue={defaultValue} onChange={handleDropdown}>
           {
-            allLoteries.map((item: any) => (
-              <option value={item} key={item}>{item}</option>
+            itens.map((item: any) => (
+              <option value={item.name} key={item.id}>{item.name}</option>
             ))
           }
         </select>
