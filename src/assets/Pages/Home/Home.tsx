@@ -17,7 +17,7 @@ export default function Home() {
     {id: 1, name: 'megasena'},
     {id: 2, name: 'lotofacil'},
     {id: 3, name: 'quina'},
-    {id: 4, name: 'lotomani'},
+    {id: 4, name: 'lotomania'},
     {id: 5, name: 'timemania'},
     {id: 6, name: 'diadesorte'},
   ]
